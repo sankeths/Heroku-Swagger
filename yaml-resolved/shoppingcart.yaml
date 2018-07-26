@@ -13,7 +13,6 @@ info:
     name: Private License
     url: http://smartbear.com
 host: shopping-cart-sa.herokuapp.com
-basePath: /shoppingcart
 tags:
 - name: Internal calls
   description: Operations available to regular development, integration, test teams.
