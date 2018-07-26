@@ -12,7 +12,7 @@ info:
   license:
     name: Private License
     url: http://smartbear.com
-host: localhost
+host: shopping-cart-sa.herokuapp.com
 basePath: /shoppingcart
 tags:
 - name: Internal calls
@@ -21,6 +21,7 @@ tags:
   description: Operations dependent on third party service.
 schemes:
 - http
+- https
 paths:
   /{type}/get_login/:
     get:
