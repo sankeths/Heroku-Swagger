@@ -42,34 +42,7 @@ paths:
         200:
           description: OK
           schema:
-            type: array
-            items:
-              type: object
-              properties:
-                id:
-                  type: integer
-                  example: 1
-                  description: User id
-                name:
-                  type: string
-                  example: Sanketh
-                  description: Users first name
-                last_name:
-                  type: string
-                  example: Shanbhag
-                  description: Users last name
-                email:
-                  type: string
-                  example: sanketh.shanbhag@smartbear.com
-                  description: Users email
-                phone:
-                  type: integer
-                  example: 9482517924
-                  description: users phone number
-                address:
-                  type: string
-                  example: Bangalore, India
-                  description: Users address
+            type: object
       security:
       - basic: []
   /{type}/get_products/:
@@ -353,28 +326,6 @@ securityDefinitions:
   basic:
     type: basic
 definitions:
-  inline_response_200_5:
-    required:
-    - Reason
-    - Status
-    - Status Code
-    properties:
-      Status:
-        type: string
-        example: Transaction Approved
-        description: Status of transaction
-      Reason:
-        type: string
-        example: Approved
-        description: Status Readon
-      Status Code:
-        type: integer
-        example: 100
-        description: Status code for the tramsaction
-    example:
-      Status: Transaction Approved
-      Status Code: 100
-      Reason: Approved
   POSTDATA:
     properties:
       quantity:
@@ -386,66 +337,6 @@ definitions:
         example: 1
         description: Product Id
   inline_response_200_1:
-    properties:
-      id:
-        type: integer
-        example: 1
-        description: Product id
-      name:
-        type: string
-        example: iPhone
-        description: Product Name
-      description:
-        type: string
-        example: This is an rare iphone
-        description: Product Description
-      image:
-        type: string
-        example: iphone.jpg
-        description: Product Image
-      price:
-        type: number
-        example: 999.0
-        description: Price of the product
-      created:
-        type: string
-        example: 2018-05-05 00:00:00
-        description: Date time of creation
-      modified:
-        type: string
-        example: 2018-05-05 00:00:00
-        description: Date time of creation
-      status:
-        type: integer
-        example: 1 or 0
-        description: Status of the user
-  inline_response_200:
-    properties:
-      id:
-        type: integer
-        example: 1
-        description: User id
-      name:
-        type: string
-        example: Sanketh
-        description: Users first name
-      last_name:
-        type: string
-        example: Shanbhag
-        description: Users last name
-      email:
-        type: string
-        example: sanketh.shanbhag@smartbear.com
-        description: Users email
-      phone:
-        type: integer
-        example: 9482517924
-        description: users phone number
-      address:
-        type: string
-        example: Bangalore, India
-        description: Users address
-  inline_response_200_2:
     properties:
       id:
         type: integer
@@ -483,7 +374,41 @@ definitions:
         type: string
         example: card
         description: Order payment method
-  inline_response_200_3:
+  inline_response_200:
+    properties:
+      id:
+        type: integer
+        example: 1
+        description: Product id
+      name:
+        type: string
+        example: iPhone
+        description: Product Name
+      description:
+        type: string
+        example: This is an rare iphone
+        description: Product Description
+      image:
+        type: string
+        example: iphone.jpg
+        description: Product Image
+      price:
+        type: number
+        example: 999.0
+        description: Price of the product
+      created:
+        type: string
+        example: 2018-05-05 00:00:00
+        description: Date time of creation
+      modified:
+        type: string
+        example: 2018-05-05 00:00:00
+        description: Date time of creation
+      status:
+        type: integer
+        example: 1 or 0
+        description: Status of the user
+  inline_response_200_2:
     properties:
       Order ID:
         type: integer
@@ -501,7 +426,7 @@ definitions:
         type: number
         example: 3996.0
         description: Total price of the order
-  inline_response_200_4:
+  inline_response_200_3:
     properties:
       id:
         type: integer
@@ -539,6 +464,28 @@ definitions:
         type: string
         example: card
         description: Order payment method
+  inline_response_200_4:
+    required:
+    - Reason
+    - Status
+    - Status Code
+    properties:
+      Status:
+        type: string
+        example: Transaction Approved
+        description: Status of transaction
+      Reason:
+        type: string
+        example: Approved
+        description: Status Readon
+      Status Code:
+        type: integer
+        example: 100
+        description: Status code for the tramsaction
+    example:
+      Status: Transaction Approved
+      Status Code: 100
+      Reason: Approved
   POSTDATA_1:
     type: object
     properties:
