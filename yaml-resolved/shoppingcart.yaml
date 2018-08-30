@@ -63,8 +63,8 @@ paths:
                   example: sanketh.shanbhag@smartbear.com
                   description: Users email
                 phone:
-                  type: integer
-                  example: 9482517924
+                  type: string
+                  example: "9482517924"
                   description: users phone number
                 address:
                   type: string
@@ -438,8 +438,8 @@ definitions:
         example: sanketh.shanbhag@smartbear.com
         description: Users email
       phone:
-        type: integer
-        example: 9482517924
+        type: string
+        example: "9482517924"
         description: users phone number
       address:
         type: string
