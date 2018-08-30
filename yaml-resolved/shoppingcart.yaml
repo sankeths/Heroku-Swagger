@@ -47,8 +47,8 @@ paths:
               type: object
               properties:
                 id:
-                  type: integer
-                  example: 1
+                  type: string
+                  example: "1"
                   description: User id
                 name:
                   type: string
@@ -422,8 +422,8 @@ definitions:
   inline_response_200:
     properties:
       id:
-        type: integer
-        example: 1
+        type: string
+        example: "1"
         description: User id
       name:
         type: string
