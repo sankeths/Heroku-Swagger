@@ -1,538 +1,539 @@
 ---
 swagger: "2.0"
 info:
-  description: |
-    A supercool demo site that takes care of your uber cool demo.</br> For exclusive use of <b style= "font-family: Arial;font-size: 24px;color:#4278d2;">SMARTBear</b> Sales Engineers.</br>
-    <img src="https://raw.githubusercontent.com/sankeths/Swagger/master/awesomeShoppingStore.PNG" alt="ShoppingCart" >
-  version: 2.0.0
-  title: Awesome Shopping Store - Smartbear
-  termsOfService: http://smartbear.com
+  description: "A supercool demo site that takes care of your uber cool demo.</br>\
+    \ For exclusive use of <b style= \"font-family: Arial;font-size: 24px;color:#4278d2;\"\
+    >SMARTBear</b> Sales Engineers.</br>\n<img src=\"https://raw.githubusercontent.com/sankeths/Swagger/master/awesomeShoppingStore.PNG\"\
+    \ alt=\"ShoppingCart\" >\n"
+  version: "2.0.0"
+  title: "Awesome Shopping Store - Smartbear"
+  termsOfService: "http://smartbear.com"
   contact:
-    email: sanketh.shanbhag@smartbear.com
+    email: "sanketh.shanbhag@smartbear.com"
   license:
-    name: Private License
-    url: http://smartbear.com
-host: shopping-cart-sa.herokuapp.com
+    name: "Commercial License"
+    url: "http://smartbear.com"
+host: "shopping-cart-sa.herokuapp.com"
 tags:
-- name: Internal calls
-  description: Operations available to regular development, integration, test teams.
-- name: External calls
-  description: Operations dependent on third party service.
+- name: "Internal calls"
+  description: "Operations available to regular development, integration, test teams."
+- name: "External calls"
+  description: "Operations dependent on third party service."
 schemes:
-- http
-- https
+- "http"
+- "https"
 paths:
   /api/get_login.php:
     get:
       tags:
-      - Internal calls
-      description: Login to user account
+      - "Internal calls"
+      description: "Login to user account"
       consumes:
-      - application/json
+      - "application/json"
       produces:
-      - application/json
-      - application/xml
+      - "application/json"
+      - "application/xml"
       parameters:
-      - name: type
-        in: path
-        description: json or xml
+      - name: "type"
+        in: "path"
+        description: "json or xml"
         required: true
-        type: string
+        type: "string"
       responses:
         200:
-          description: OK
+          description: "OK"
           schema: {}
       security:
       - basic: []
   /{type}/get_products/:
     get:
       tags:
-      - Internal calls
-      description: Get list of all products
+      - "Internal calls"
+      description: "Get list of all products"
       consumes:
-      - application/json
+      - "application/json"
       produces:
-      - application/json
-      - application/xml
+      - "application/json"
+      - "application/xml"
       parameters:
-      - name: type
-        in: path
-        description: json or xml
+      - name: "type"
+        in: "path"
+        description: "json or xml"
         required: true
-        type: string
+        type: "string"
       responses:
         200:
-          description: OK
+          description: "OK"
           schema:
-            type: array
+            type: "array"
             items:
-              type: object
+              type: "object"
               properties:
                 id:
-                  type: integer
+                  type: "integer"
                   example: 1
-                  description: Product id
+                  description: "Product id"
                 name:
-                  type: string
-                  example: iPhone
-                  description: Product Name
+                  type: "string"
+                  example: "iPhone"
+                  description: "Product Name"
                 description:
-                  type: string
-                  example: This is an rare iphone
-                  description: Product Description
+                  type: "string"
+                  example: "This is an rare iphone"
+                  description: "Product Description"
                 image:
-                  type: string
-                  example: iphone.jpg
-                  description: Product Image
+                  type: "string"
+                  example: "iphone.jpg"
+                  description: "Product Image"
                 price:
-                  type: number
+                  type: "number"
                   example: 999.0
-                  description: Price of the product
+                  description: "Price of the product"
                 created:
-                  type: string
-                  example: 2018-05-05 00:00:00
-                  description: Date time of creation
+                  type: "string"
+                  example: "2018-05-05 00:00:00"
+                  description: "Date time of creation"
                 modified:
-                  type: string
-                  example: 2018-05-05 00:00:00
-                  description: Date time of creation
+                  type: "string"
+                  example: "2018-05-05 00:00:00"
+                  description: "Date time of creation"
                 status:
-                  type: integer
-                  example: 1 or 0
-                  description: Status of the user
+                  type: "integer"
+                  example: "1 or 0"
+                  description: "Status of the user"
       security:
       - basic: []
   /{type}/get_orders/:
     get:
       tags:
-      - Internal calls
-      description: Get list of all orders for the user
+      - "Internal calls"
+      description: "Get list of all orders for the user"
       consumes:
-      - application/json
+      - "application/json"
       produces:
-      - application/json
-      - application/xml
+      - "application/json"
+      - "application/xml"
       parameters:
-      - name: type
-        in: path
-        description: json or xml
+      - name: "type"
+        in: "path"
+        description: "json or xml"
         required: true
-        type: string
+        type: "string"
       responses:
         200:
-          description: OK
+          description: "OK"
           schema:
-            type: array
+            type: "array"
             items:
-              type: object
+              type: "object"
               properties:
                 id:
-                  type: integer
+                  type: "integer"
                   example: 1
-                  description: Order's ID
+                  description: "Order's ID"
                 customer_id:
-                  type: integer
+                  type: "integer"
                   example: 1
-                  description: Customer ID
+                  description: "Customer ID"
                 total_price:
-                  type: number
+                  type: "number"
                   example: 999.0
-                  description: Total Order Price
+                  description: "Total Order Price"
                 status:
-                  type: integer
+                  type: "integer"
                   example: 0
-                  description: Status of the order for internal use.
+                  description: "Status of the order for internal use."
                 order_id:
-                  type: integer
+                  type: "integer"
                   example: 1
-                  description: Order ID
+                  description: "Order ID"
                 quantity:
-                  type: integer
+                  type: "integer"
                   example: 1
-                  description: Quantity
+                  description: "Quantity"
                 price:
-                  type: number
+                  type: "number"
                   example: 1.0
-                  description: Price of the product
+                  description: "Price of the product"
                 image:
-                  type: string
-                  example: iphone.jpeg
-                  description: Image of the product
+                  type: "string"
+                  example: "iphone.jpeg"
+                  description: "Image of the product"
                 paymenttype:
-                  type: string
-                  example: card
-                  description: Order payment method
+                  type: "string"
+                  example: "card"
+                  description: "Order payment method"
       security:
       - basic: []
   /{type}/post_order/:
     post:
       tags:
-      - Internal calls
-      description: Get list of all orders for the user
+      - "Internal calls"
+      description: "Get list of all orders for the user"
       consumes:
-      - application/json
+      - "application/json"
       produces:
-      - application/json
-      - application/xml
+      - "application/json"
+      - "application/xml"
       parameters:
-      - name: type
-        in: path
-        description: json or xml
+      - name: "type"
+        in: "path"
+        description: "json or xml"
         required: true
-        type: string
-      - in: body
-        name: POSTDATA
-        description: Creates a new employee in DB
+        type: "string"
+      - in: "body"
+        name: "POSTDATA"
+        description: "Creates a new employee in DB"
         required: false
         schema:
-          type: array
+          type: "array"
           items:
-            $ref: '#/definitions/POSTDATA'
+            $ref: "#/definitions/POSTDATA"
       responses:
         200:
-          description: OK
+          description: "OK"
           schema:
-            type: array
+            type: "array"
             items:
-              type: object
+              type: "object"
               properties:
                 Order ID:
-                  type: integer
+                  type: "integer"
                   example: 298
-                  description: Order ID
+                  description: "Order ID"
                 Order Item ID:
-                  type: integer
+                  type: "integer"
                   example: 643
-                  description: Product Id
+                  description: "Product Id"
                 Item Total Price:
-                  type: number
+                  type: "number"
                   example: 1998.0
-                  description: Total price of item
+                  description: "Total price of item"
                 Total Order Price:
-                  type: number
+                  type: "number"
                   example: 3996.0
-                  description: Total price of the order
+                  description: "Total price of the order"
       security:
       - basic: []
   /{type}/get_order/:
     get:
       tags:
-      - Internal calls
-      description: Get order details
+      - "Internal calls"
+      description: "Get order details"
       consumes:
-      - application/json
+      - "application/json"
       produces:
-      - application/json
-      - application/xml
+      - "application/json"
+      - "application/xml"
       parameters:
-      - name: type
-        in: path
-        description: json or xml
+      - name: "type"
+        in: "path"
+        description: "json or xml"
         required: true
-        type: string
-      - name: order_id
-        in: query
-        description: Order Id
+        type: "string"
+      - name: "order_id"
+        in: "query"
+        description: "Order Id"
         required: true
-        type: integer
+        type: "integer"
       responses:
         200:
-          description: OK
+          description: "OK"
           schema:
-            type: array
+            type: "array"
             items:
-              type: object
+              type: "object"
               properties:
                 id:
-                  type: integer
+                  type: "integer"
                   example: 1
-                  description: Order's ID
+                  description: "Order's ID"
                 customer_id:
-                  type: integer
+                  type: "integer"
                   example: 1
-                  description: Customer ID
+                  description: "Customer ID"
                 name:
-                  type: string
-                  example: Iphone
-                  description: product Name
+                  type: "string"
+                  example: "Iphone"
+                  description: "product Name"
                 total_price:
-                  type: number
+                  type: "number"
                   example: 999.0
-                  description: Total Order Price
+                  description: "Total Order Price"
                 status:
-                  type: integer
+                  type: "integer"
                   example: 0
-                  description: Status of the order for internal use.
+                  description: "Status of the order for internal use."
                 order_id:
-                  type: integer
+                  type: "integer"
                   example: 1
-                  description: Order ID
+                  description: "Order ID"
                 quantity:
-                  type: integer
+                  type: "integer"
                   example: 1
-                  description: Quantity
+                  description: "Quantity"
                 price:
-                  type: number
+                  type: "number"
                   example: 1.0
-                  description: Price of the product
+                  description: "Price of the product"
                 paymenttype:
-                  type: string
-                  example: card
-                  description: Order payment method
+                  type: "string"
+                  example: "card"
+                  description: "Order payment method"
       security:
       - basic: []
   /shoppingcart/service_creditcard.php:
     post:
       tags:
-      - External calls
-      description: External Service to make Creditcard payments
+      - "External calls"
+      description: "External Service to make Creditcard payments"
       consumes:
-      - application/json
+      - "application/json"
       produces:
-      - application/json
+      - "application/json"
       parameters:
-      - in: body
-        name: POSTDATA
-        description: Creates a new employee in DB
+      - in: "body"
+        name: "POSTDATA"
+        description: "Creates a new employee in DB"
         required: false
         schema:
-          $ref: '#/definitions/POSTDATA_1'
+          $ref: "#/definitions/POSTDATA_1"
       responses:
         200:
-          description: OK
+          description: "OK"
           schema:
-            type: object
+            type: "object"
             required:
-            - Reason
-            - Status
-            - Status Code
+            - "Reason"
+            - "Status"
+            - "Status Code"
             properties:
               Status:
-                type: string
-                example: Transaction Approved
-                description: Status of transaction
+                type: "string"
+                example: "Transaction Approved"
+                description: "Status of transaction"
               Reason:
-                type: string
-                example: Approved
-                description: Status Readon
+                type: "string"
+                example: "Approved"
+                description: "Status Readon"
               Status Code:
-                type: integer
+                type: "integer"
                 example: 100
-                description: Status code for the tramsaction
+                description: "Status code for the tramsaction"
       security:
       - basic: []
 securityDefinitions:
   basic:
-    type: basic
+    type: "basic"
 definitions:
   POSTDATA:
     properties:
       quantity:
-        type: integer
+        type: "integer"
         example: 1
-        description: Product Quantity
+        description: "Product Quantity"
       product_id:
-        type: integer
+        type: "integer"
         example: 1
-        description: Product Id
+        description: "Product Id"
   inline_response_200_1:
     properties:
       id:
-        type: integer
+        type: "integer"
         example: 1
-        description: Order's ID
+        description: "Order's ID"
       customer_id:
-        type: integer
+        type: "integer"
         example: 1
-        description: Customer ID
+        description: "Customer ID"
       total_price:
-        type: number
+        type: "number"
         example: 999.0
-        description: Total Order Price
+        description: "Total Order Price"
       status:
-        type: integer
+        type: "integer"
         example: 0
-        description: Status of the order for internal use.
+        description: "Status of the order for internal use."
       order_id:
-        type: integer
+        type: "integer"
         example: 1
-        description: Order ID
+        description: "Order ID"
       quantity:
-        type: integer
+        type: "integer"
         example: 1
-        description: Quantity
+        description: "Quantity"
       price:
-        type: number
+        type: "number"
         example: 1.0
-        description: Price of the product
+        description: "Price of the product"
       image:
-        type: string
-        example: iphone.jpeg
-        description: Image of the product
+        type: "string"
+        example: "iphone.jpeg"
+        description: "Image of the product"
       paymenttype:
-        type: string
-        example: card
-        description: Order payment method
+        type: "string"
+        example: "card"
+        description: "Order payment method"
   inline_response_200:
     properties:
       id:
-        type: integer
+        type: "integer"
         example: 1
-        description: Product id
+        description: "Product id"
       name:
-        type: string
-        example: iPhone
-        description: Product Name
+        type: "string"
+        example: "iPhone"
+        description: "Product Name"
       description:
-        type: string
-        example: This is an rare iphone
-        description: Product Description
+        type: "string"
+        example: "This is an rare iphone"
+        description: "Product Description"
       image:
-        type: string
-        example: iphone.jpg
-        description: Product Image
+        type: "string"
+        example: "iphone.jpg"
+        description: "Product Image"
       price:
-        type: number
+        type: "number"
         example: 999.0
-        description: Price of the product
+        description: "Price of the product"
       created:
-        type: string
-        example: 2018-05-05 00:00:00
-        description: Date time of creation
+        type: "string"
+        example: "2018-05-05 00:00:00"
+        description: "Date time of creation"
       modified:
-        type: string
-        example: 2018-05-05 00:00:00
-        description: Date time of creation
+        type: "string"
+        example: "2018-05-05 00:00:00"
+        description: "Date time of creation"
       status:
-        type: integer
-        example: 1 or 0
-        description: Status of the user
+        type: "integer"
+        example: "1 or 0"
+        description: "Status of the user"
   inline_response_200_2:
     properties:
       Order ID:
-        type: integer
+        type: "integer"
         example: 298
-        description: Order ID
+        description: "Order ID"
       Order Item ID:
-        type: integer
+        type: "integer"
         example: 643
-        description: Product Id
+        description: "Product Id"
       Item Total Price:
-        type: number
+        type: "number"
         example: 1998.0
-        description: Total price of item
+        description: "Total price of item"
       Total Order Price:
-        type: number
+        type: "number"
         example: 3996.0
-        description: Total price of the order
+        description: "Total price of the order"
   inline_response_200_3:
     properties:
       id:
-        type: integer
+        type: "integer"
         example: 1
-        description: Order's ID
+        description: "Order's ID"
       customer_id:
-        type: integer
+        type: "integer"
         example: 1
-        description: Customer ID
+        description: "Customer ID"
       name:
-        type: string
-        example: Iphone
-        description: product Name
+        type: "string"
+        example: "Iphone"
+        description: "product Name"
       total_price:
-        type: number
+        type: "number"
         example: 999.0
-        description: Total Order Price
+        description: "Total Order Price"
       status:
-        type: integer
+        type: "integer"
         example: 0
-        description: Status of the order for internal use.
+        description: "Status of the order for internal use."
       order_id:
-        type: integer
+        type: "integer"
         example: 1
-        description: Order ID
+        description: "Order ID"
       quantity:
-        type: integer
+        type: "integer"
         example: 1
-        description: Quantity
+        description: "Quantity"
       price:
-        type: number
+        type: "number"
         example: 1.0
-        description: Price of the product
+        description: "Price of the product"
       paymenttype:
-        type: string
-        example: card
-        description: Order payment method
+        type: "string"
+        example: "card"
+        description: "Order payment method"
   inline_response_200_4:
     required:
-    - Reason
-    - Status
-    - Status Code
+    - "Reason"
+    - "Status"
+    - "Status Code"
     properties:
       Status:
-        type: string
-        example: Transaction Approved
-        description: Status of transaction
+        type: "string"
+        example: "Transaction Approved"
+        description: "Status of transaction"
       Reason:
-        type: string
-        example: Approved
-        description: Status Readon
+        type: "string"
+        example: "Approved"
+        description: "Status Readon"
       Status Code:
-        type: integer
+        type: "integer"
         example: 100
-        description: Status code for the tramsaction
+        description: "Status code for the tramsaction"
     example:
-      Status: Transaction Approved
+      Status: "Transaction Approved"
       Status Code: 100
-      Reason: Approved
+      Reason: "Approved"
   POSTDATA_1:
-    type: object
+    type: "object"
     properties:
       id:
-        type: integer
+        type: "integer"
         example: 33
-        description: Order ID
+        description: "Order ID"
       action:
-        type: string
-        example: placeOrdercc
-        description: placeOrdercc
+        type: "string"
+        example: "placeOrdercc"
+        description: "placeOrdercc"
       cc_money:
-        type: number
+        type: "number"
         example: 798.0
-        description: Order amount
+        description: "Order amount"
       cc_name:
-        type: string
-        example: S S
-        description: Cardholders name
+        type: "string"
+        example: "S S"
+        description: "Cardholders name"
       cc_number:
-        type: integer
+        type: "integer"
         example: 9234123412341234
-        description: cc number
+        description: "cc number"
       cc_exp_mo:
-        type: integer
+        type: "integer"
         example: 1
-        description: cc expiry month
+        description: "cc expiry month"
       cc_exp_yr:
-        type: integer
+        type: "integer"
         example: 2018
-        description: cc expiry year
+        description: "cc expiry year"
       cc_cvv:
-        type: integer
+        type: "integer"
         example: 123
-        description: cc expiry year
+        description: "cc expiry year"
     example:
       cc_exp_mo: 1
-      action: placeOrdercc
+      action: "placeOrdercc"
       id: 33
       cc_cvv: 123
       cc_money: 798.0
-      cc_name: S S
+      cc_name: "S S"
       cc_number: 9234123412341234
       cc_exp_yr: 2018
 parameters:
   pathParam:
-    name: type
-    in: path
-    description: json or xml
+    name: "type"
+    in: "path"
+    description: "json or xml"
     required: true
-    type: string
+    type: "string"
