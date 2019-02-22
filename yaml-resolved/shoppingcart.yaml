@@ -523,3 +523,4 @@ parameters:
     description: json or xml
     required: true
     type: string
+x-apigee-id: ShoppingCart
